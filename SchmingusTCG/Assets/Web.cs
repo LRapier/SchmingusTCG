@@ -43,13 +43,13 @@ public class Web : MonoBehaviour
             else
             {
                 Debug.Log(www.downloadHandler.text);
-                Main.Instance.userInfo.SetCredentials(username, password);
-                Main.Instance.userInfo.SetInfo(www.downloadHandler.text);
 
                 if (www.downloadHandler.text.Contains("Wrong Credentials") || www.downloadHandler.text.Contains("Username does not exist"))
                     Debug.Log("Try Again");
                 else
                 {
+                    Main.Instance.userInfo.SetCredentials(username, password);
+                    Main.Instance.userInfo.SetInfo(www.downloadHandler.text);
                     Main.Instance.userProfile.SetActive(true);
                     Main.Instance.login.gameObject.SetActive(false);
                 }
@@ -196,10 +196,32 @@ public class Web : MonoBehaviour
         }
         sd.DeleteCard();
     }
+    public IEnumerator GetMoney()
+    {
+        yield return new WaitForSeconds(0.1f);
+        Debug.Log("GetMoney");
+        WWWForm form = new WWWForm();
+        form.AddField("userID", Main.Instance.userInfo.UserID);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/SchmingusTCG/GetMoney.php", form))
+        {
+            yield return www.SendWebRequest();
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                bool isSelling = true;
+                Debug.Log(www.downloadHandler.text);
+                Main.Instance.userInfo.Money = www.downloadHandler.text;
+                Main.Instance.userInfo.setMoney.UpdateMoney(isSelling);
+            }
+        }
+    }
 
     public IEnumerator MineMoney(int moneyToAdd)
     {
-        Debug.Log("MineMoney");
         WWWForm form = new WWWForm();
         form.AddField("userID", Main.Instance.userInfo.UserID);
         form.AddField("moneyToAdd", moneyToAdd);
@@ -217,6 +239,31 @@ public class Web : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
                 Main.Instance.userInfo.Money = www.downloadHandler.text;
                 Main.Instance.userInfo.setMoney.UpdateMoney(isSelling);
+            }
+        }
+    }
+
+    public IEnumerator PullCard(string userid, System.Action<string> callback)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("userid", userid);
+        form.AddField("cost", 50);
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/SchmingusTCG/CardPull.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                // Show results as text
+                Debug.Log(www.downloadHandler.text);
+                string jsonArray = www.downloadHandler.text;
+
+                callback(jsonArray);
             }
         }
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2025 at 09:30 PM
+-- Generation Time: Apr 01, 2025 at 11:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -65,7 +65,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `money`) VALUES
-(1, 'test', 'test', 5094);
+(1, 'test', 'test', 5115);
 
 -- --------------------------------------------------------
 
