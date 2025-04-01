@@ -61,6 +61,8 @@ public class CardManager : MonoBehaviour
             cardGO.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = cardInfoJson["name"];
             cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = cardInfoJson["price"] + " Smackers";
             cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
+            string rarity = cardInfoJson["rarity"];
+            cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);
 
             int imgVer = cardInfoJson["imgVer"].AsInt;
 

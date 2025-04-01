@@ -143,7 +143,6 @@ public class Web : MonoBehaviour
             }
             else
             {
-                // Show results as text
                 Debug.Log(www.downloadHandler.text);
             }
         }
@@ -189,9 +188,10 @@ public class Web : MonoBehaviour
             }
             else
             {
+                bool isSelling = true;
                 Debug.Log(www.downloadHandler.text);
                 Main.Instance.userInfo.Money = www.downloadHandler.text;
-                Main.Instance.userInfo.setMoney.UpdateMoney();
+                Main.Instance.userInfo.setMoney.UpdateMoney(isSelling);
             }
         }
         sd.DeleteCard();
@@ -213,9 +213,10 @@ public class Web : MonoBehaviour
             }
             else
             {
+                bool isSelling = false;
                 Debug.Log(www.downloadHandler.text);
                 Main.Instance.userInfo.Money = www.downloadHandler.text;
-                Main.Instance.userInfo.setMoney.UpdateMoney();
+                Main.Instance.userInfo.setMoney.UpdateMoney(isSelling);
             }
         }
     }

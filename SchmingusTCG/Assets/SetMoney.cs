@@ -5,13 +5,22 @@ using TMPro;
 
 public class SetMoney : MonoBehaviour
 {
+    bool isLoaded = false;
     void OnEnable()
     {
-        UpdateMoney();
+        bool isSelling = false;
+        UpdateMoney(isSelling);
     }
 
-    public void UpdateMoney()
+    public void UpdateMoney(bool isSelling)
     {
-        GetComponent<TextMeshProUGUI>().text = Main.Instance.userInfo.Money + " Smackers";
+        if(isLoaded && !isSelling)
+            GetComponent<TextMeshProUGUI>().text = (int.Parse(Main.Instance.userInfo.Money) + 1) + " Smackers";
+        else
+        {
+            GetComponent<TextMeshProUGUI>().text = Main.Instance.userInfo.Money + " Smackers";
+            isLoaded = true;
+        }
+
     }
 }
