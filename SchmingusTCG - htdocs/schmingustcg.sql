@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 03, 2025 at 11:45 PM
+-- Generation Time: Apr 04, 2025 at 12:24 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -69,7 +69,16 @@ INSERT INTO `cards` (`id`, `name`, `rarity`, `price`, `imgVer`) VALUES
 (27, 'Rat Skybo', 'epic', 500, 1),
 (28, 'Rat Spleep', 'rare', 50, 1),
 (29, 'Rat Yepmo', 'rare', 50, 1),
-(30, 'S-Blob', 'epic', 500, 1);
+(30, 'S-Blob', 'epic', 500, 1),
+(31, 'Batgus', 'rare', 50, 1),
+(32, 'Nightgus', 'rare', 50, 1),
+(33, 'Oragus', 'epic', 500, 1),
+(34, 'Rehoogus', 'rare', 50, 1),
+(35, 'Rerobgus', 'rare', 50, 1),
+(36, 'Spoigus', 'epic', 500, 1),
+(37, 'Orphgus', 'epic', 500, 1),
+(38, 'Robgus', 'rare', 50, 1),
+(39, 'Sigus', 'epic', 500, 1);
 
 -- --------------------------------------------------------
 
@@ -89,7 +98,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `money`) VALUES
-(1, 'test', 'test', 2869),
+(1, 'test', 'test', 369),
 (2, 'poo', 'poo', 1);
 
 -- --------------------------------------------------------
@@ -110,21 +119,31 @@ CREATE TABLE `userscards` (
 --
 
 INSERT INTO `userscards` (`id`, `userid`, `cardid`, `edition`) VALUES
-(62, 1, 9, 'none'),
-(63, 1, 18, 'none'),
-(64, 1, 13, 'holo'),
-(65, 1, 16, 'holo'),
-(68, 1, 12, 'holo'),
-(69, 1, 10, 'none'),
-(70, 1, 8, 'foil'),
-(71, 1, 8, 'none'),
-(72, 1, 8, 'none'),
-(73, 1, 12, 'foil'),
-(74, 1, 13, 'holo'),
-(75, 1, 10, 'foil'),
-(76, 1, 7, 'foil'),
-(77, 1, 13, 'holo'),
-(78, 1, 25, 'none');
+(1, 1, 22, 'holo'),
+(2, 1, 16, 'none'),
+(3, 1, 7, 'none'),
+(4, 1, 15, 'none'),
+(5, 1, 13, 'none'),
+(6, 1, 9, 'none'),
+(7, 1, 14, 'none'),
+(8, 1, 6, 'foil'),
+(9, 1, 7, 'holo'),
+(10, 1, 18, 'none'),
+(11, 1, 14, 'none'),
+(12, 1, 4, 'none'),
+(13, 1, 7, 'none'),
+(14, 1, 9, 'none'),
+(15, 1, 17, 'holo'),
+(16, 1, 18, 'foil'),
+(17, 1, 20, 'none'),
+(18, 1, 29, 'none'),
+(19, 1, 12, 'none'),
+(20, 1, 16, 'none'),
+(21, 1, 9, 'none'),
+(22, 1, 7, 'none'),
+(23, 1, 24, 'none'),
+(24, 1, 14, 'holo'),
+(25, 1, 37, 'foil');
 
 --
 -- Indexes for dumped tables
@@ -156,7 +175,7 @@ ALTER TABLE `userscards`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -168,7 +187,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `userscards`
 --
 ALTER TABLE `userscards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

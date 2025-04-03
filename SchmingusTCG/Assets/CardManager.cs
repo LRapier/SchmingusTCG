@@ -7,6 +7,7 @@ using SimpleJSON;
 using TMPro;
 using UnityEngine.XR;
 using static UnityEditor.Progress;
+using System.Diagnostics;
 
 public class CardManager : MonoBehaviour
 {
@@ -96,7 +97,7 @@ public class CardManager : MonoBehaviour
                 {
                     price = (int)(price * 1.25);
                 }
-                cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = cardInfoJson["price"] + " Smackers";
+                cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = price + " Smackers";
                 cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
                 string rarity = cardInfoJson["rarity"];
                 cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);
@@ -182,7 +183,16 @@ public class CardManager : MonoBehaviour
             cardGO.transform.localPosition = Vector3.zero;
 
             cardGO.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = cardInfoJson["name"];
-            cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = cardInfoJson["price"] + " Smackers";
+            int price = cardInfoJson["price"];
+            if (edition == "holo")
+            {
+                price = (int)(price * 2);
+            }
+            else if (edition == "foil")
+            {
+                price = (int)(price * 1.25);
+            }
+            cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = price + " Smackers";
             cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
             string rarity = cardInfoJson["rarity"];
             cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);
@@ -265,7 +275,16 @@ public class CardManager : MonoBehaviour
             cardGO.transform.localPosition = Vector3.zero;
 
             cardGO.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = cardInfoJson["name"];
-            cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = cardInfoJson["price"] + " Smackers";
+            int price = cardInfoJson["price"];
+            if (edition == "holo")
+            {
+                price = (int)(price * 2);
+            }
+            else if (edition == "foil")
+            {
+                price = (int)(price * 1.25);
+            }
+            cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = price + " Smackers";
             cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
             string rarity = cardInfoJson["rarity"];
             cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);

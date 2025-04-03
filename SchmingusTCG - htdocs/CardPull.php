@@ -15,7 +15,7 @@ if ($conn->connect_error)
 $rng = rand(1,10000);
 if($rng <= 100)
     $rarity = "mythical";
-else if ($rng <= 500)
+else if ($rng <= 400)
     $rarity = "legendary";
 else if ($rng <= 1000)
     $rarity = "epic";
