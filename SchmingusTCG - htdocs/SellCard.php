@@ -19,17 +19,31 @@ if($result->num_rows > 0)
 {
     $cardPrice = $result->fetch_assoc()["price"];
 
-    $sql2 = "DELETE FROM userscards WHERE id = '" . $ID . "'";
-
+    $sql2 = "SELECT edition FROM userscards WHERE id = '" . $ID . "'";
     $result2 = $conn->query($sql2);
     if($result2)
     {
-        $sql3 = "UPDATE `users` SET `money`= money + '" . $cardPrice . "' WHERE `id` = '" . $userID . "'";
-        $conn->query($sql3);
+        if($result->fetch_assoc()["edition"] == "holo")
+            $cardPrice = (int)$cardPrice * 2;
+        else if($result->fetch_assoc()["edition"] == "foil")
+            $cardPrice = (int)$cardPrice * 1.25;
+
+        $sql3 = "DELETE FROM userscards WHERE id = '" . $ID . "'";
+
+        $result3 = $conn->query($sql3);
+        if($result3)
+        {
+            $sql3 = "UPDATE `users` SET `money`= money + '" . $cardPrice . "' WHERE `id` = '" . $userID . "'";
+            $conn->query($sql3);
+        }
+        else
+        {
+            echo "error: could not delete card";
+        }
     }
     else
     {
-        echo "error: could not delete card";
+        echo "Couldn't get edition";
     }
 }
 else

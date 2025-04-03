@@ -9,7 +9,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT id, cardid FROM userscards WHERE userid = '" . $userID . "'";
+$sql = "SELECT id, cardid, edition FROM userscards WHERE userid = '" . $userID . "'";
 
 $result = $conn->query($sql);
 

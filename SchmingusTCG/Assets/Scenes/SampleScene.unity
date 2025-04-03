@@ -4924,6 +4924,8 @@ MonoBehaviour:
   inventoryParent: {fileID: 1834157402}
   storeUI: {fileID: 444626398}
   okButton: {fileID: 1622212966}
+  holoSprite: {fileID: 21300000, guid: 617e1b095f62f0d4aa5a59348efefcc7, type: 3}
+  foilSprite: {fileID: 21300000, guid: 91aa2cdf80ceebf42abbc4136946d319, type: 3}
 --- !u!1 &1601012380
 GameObject:
   m_ObjectHideFlags: 0

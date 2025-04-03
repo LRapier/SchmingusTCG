@@ -196,6 +196,7 @@ public class Web : MonoBehaviour
         }
         sd.DeleteCard();
     }
+
     public IEnumerator GetMoney()
     {
         yield return new WaitForSeconds(0.1f);

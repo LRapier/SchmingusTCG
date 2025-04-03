@@ -355,7 +355,7 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/2022.3.60f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 "Assets/Card.cs"
 "Assets/CardManager.cs"
-"Assets/ContentSetToTop.cs"
+"Assets/ClearCoal.cs"
 "Assets/ImageManager.cs"
 "Assets/Login.cs"
 "Assets/Main.cs"

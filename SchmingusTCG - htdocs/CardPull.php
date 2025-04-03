@@ -14,29 +14,25 @@ if ($conn->connect_error)
 
 $rng = rand(1,10000);
 if($rng <= 100)
-{
     $rarity = "mythical";
-}
 else if ($rng <= 500)
-{
     $rarity = "legendary";
-}
 else if ($rng <= 1000)
-{
     $rarity = "epic";
-}
 else if ($rng <= 2500)
-{
     $rarity = "rare";
-}
 else if ($rng <= 5000)
-{
     $rarity = "uncommon";
-}
 else
-{
     $rarity = "common";
-}
+
+$rng = rand(1,10000);
+if($rng <= 1000)
+    $edition = "holo";
+else if($rng <= 3000)
+    $edition = "foil";
+else
+    $edition = "none";
 
 $sql5 = "UPDATE `users` SET `money`= money - '" . $cost . "' WHERE `id` = '" . $userid . "'";
 $conn->query($sql5);
@@ -53,7 +49,7 @@ if ($result->num_rows > 0)
     }
     $cardid = $cardids[rand(0, sizeof($cardids) - 1)];
 
-    $sql2 = "INSERT INTO userscards (userid, cardid) VALUES ('" . $userid . "' , '" . $cardid . "')";
+    $sql2 = "INSERT INTO userscards (userid, cardid, edition) VALUES ('" . $userid . "' , '" . $cardid . "' , '" . $edition . "')";
     $result = $conn->query($sql2);
     if ($result)
     {
@@ -62,7 +58,7 @@ if ($result->num_rows > 0)
         if($result->num_rows > 0)
         {
             $id = $result->fetch_array()[0] ?? '';
-            $sql4 = "SELECT id, cardid FROM userscards WHERE id = '" . $id . "'";
+            $sql4 = "SELECT id, cardid, edition FROM userscards WHERE id = '" . $id . "'";
             $result = $conn->query($sql4);
             if ($result->num_rows > 0)
             {

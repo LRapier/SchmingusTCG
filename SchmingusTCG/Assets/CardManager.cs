@@ -16,6 +16,8 @@ public class CardManager : MonoBehaviour
     public GameObject storeUI;
     public GameObject okButton;
     GameObject animatedPulledCard;
+    public Sprite holoSprite;
+    public Sprite foilSprite;
 
     void Start()
     {
@@ -62,6 +64,7 @@ public class CardManager : MonoBehaviour
                 bool isDone = false;
                 string cardId = jsonArray[i].AsObject["cardid"];
                 string id = jsonArray[i].AsObject["id"];
+                string edition = jsonArray[i].AsObject["edition"];
                 JSONObject cardInfoJson = new JSONObject();
 
                 Action<string> getCardInfoCallback = (cardInfo) =>
@@ -84,10 +87,31 @@ public class CardManager : MonoBehaviour
                 cardGO.transform.localPosition = Vector3.zero;
 
                 cardGO.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = cardInfoJson["name"];
+                int price = cardInfoJson["price"];
+                if(edition == "holo")
+                {
+                    price = (int)(price * 2);
+                }
+                else if(edition == "foil")
+                {
+                    price = (int)(price * 1.25);
+                }
                 cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = cardInfoJson["price"] + " Smackers";
                 cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
                 string rarity = cardInfoJson["rarity"];
                 cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);
+                switch(edition)
+                {
+                    case "holo":
+                        cardGO.transform.Find("Edition").GetComponent<Image>().sprite = holoSprite;
+                        break;
+                    case "foil":
+                        cardGO.transform.Find("Edition").GetComponent<Image>().sprite = foilSprite;
+                        break;
+                    case "none":
+                        cardGO.transform.Find("Edition").GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
+                        break;
+                }
 
                 int imgVer = cardInfoJson["imgVer"].AsInt;
 
@@ -135,6 +159,7 @@ public class CardManager : MonoBehaviour
             bool isDone = false;
             string cardId = jsonArray[i].AsObject["cardid"];
             string id = jsonArray[i].AsObject["id"];
+            string edition = jsonArray[i].AsObject["edition"];
             JSONObject cardInfoJson = new JSONObject();
 
             Action<string> getCardInfoCallback = (cardInfo) =>
@@ -161,6 +186,18 @@ public class CardManager : MonoBehaviour
             cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
             string rarity = cardInfoJson["rarity"];
             cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);
+            switch(edition)
+            {
+                case "holo":
+                    cardGO.transform.Find("Edition").GetComponent<Image>().sprite = holoSprite;
+                    break;
+                case "foil":
+                    cardGO.transform.Find("Edition").GetComponent<Image>().sprite = foilSprite;
+                    break;
+                case "none":
+                    cardGO.transform.Find("Edition").GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
+                    break;
+            }
 
             int imgVer = cardInfoJson["imgVer"].AsInt;
 
@@ -204,6 +241,7 @@ public class CardManager : MonoBehaviour
             bool isDone = false;
             string cardId = jsonArray[i].AsObject["cardid"];
             string id = jsonArray[i].AsObject["id"];
+            string edition = jsonArray[i].AsObject["edition"];
             JSONObject cardInfoJson = new JSONObject();
 
             Action<string> getCardInfoCallback = (cardInfo) =>
@@ -231,6 +269,18 @@ public class CardManager : MonoBehaviour
             cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
             string rarity = cardInfoJson["rarity"];
             cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);
+            switch(edition)
+            {
+                case "holo":
+                    cardGO.transform.Find("Edition").GetComponent<Image>().sprite = holoSprite;
+                    break;
+                case "foil":
+                    cardGO.transform.Find("Edition").GetComponent<Image>().sprite = foilSprite;
+                    break;
+                case "none":
+                    cardGO.transform.Find("Edition").GetComponent<Image>().color = new Color(1f, 1f, 1f, 0f);
+                    break;
+            }
 
             int imgVer = cardInfoJson["imgVer"].AsInt;
 
