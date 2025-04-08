@@ -24,7 +24,7 @@ else
 {
     echo "Creating User...";
     //Insert user and pass into DB
-    $sql2 = "INSERT INTO users (username, password, money) VALUES ('" . $loginUser . "' , '" . $loginPass . "', 0)";
+    $sql2 = "INSERT INTO users (username, password, money) VALUES ('" . $loginUser . "' , '" . $loginPass . "', 50)";
     if ($conn->query($sql2) === TRUE) {
         echo "New record created successfully";
     } else {

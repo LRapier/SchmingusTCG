@@ -360,6 +360,7 @@
 "Assets/Login.cs"
 "Assets/Main.cs"
 "Assets/Mine.cs"
+"Assets/SchmingleDex.cs"
 "Assets/SellDelete.cs"
 "Assets/SetMoney.cs"
 "Assets/SetUsername.cs"
