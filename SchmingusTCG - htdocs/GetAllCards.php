@@ -8,7 +8,7 @@ if ($conn->connect_error)
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT name, rarity, price, imgVer FROM cards";
+$sql = "SELECT id FROM cards";
 
 $result = $conn->query($sql);
 

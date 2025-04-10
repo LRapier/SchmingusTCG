@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 08, 2025 at 08:47 PM
+-- Generation Time: Apr 10, 2025 at 08:48 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,7 @@ INSERT INTO `cards` (`id`, `name`, `rarity`, `price`, `imgVer`) VALUES
 (1, 'Schmingus', 'common', 1, 1),
 (2, 'Evil Schmingus', 'uncommon', 5, 1),
 (3, 'Rainbow Schmingus', 'mythical', 5000, 1),
-(4, 'Golden Schmingus', 'epic', 500, 1),
+(4, 'Golden Schmingus', 'epic', 500, 2),
 (5, 'Invisible Schmingus', 'rare', 50, 1),
 (6, 'Big Schmingus', 'legendary', 1000, 1),
 (7, 'Beeboo', 'common', 1, 1),
@@ -99,8 +99,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `money`) VALUES
 (1, 'test', 'test', 999999),
-(2, 'poo', 'poo', 50),
-(3, 'buh', 'buh', 1);
+(2, 'poo', 'poo', 0),
+(3, 'buh', 'buh', 1),
+(4, 'p', 'p', 50);
 
 -- --------------------------------------------------------
 
@@ -255,7 +256,10 @@ INSERT INTO `userscards` (`id`, `userid`, `cardid`, `edition`) VALUES
 (135, 3, 1, 'none'),
 (136, 3, 11, 'none'),
 (137, 3, 21, 'none'),
-(138, 3, 4, 'foil');
+(138, 3, 4, 'foil'),
+(139, 3, 21, 'none'),
+(140, 2, 9, 'none'),
+(142, 2, 31, 'none');
 
 --
 -- Indexes for dumped tables
@@ -293,13 +297,13 @@ ALTER TABLE `cards`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `userscards`
 --
 ALTER TABLE `userscards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

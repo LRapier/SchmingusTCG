@@ -237,7 +237,7 @@ public class Web : MonoBehaviour
             else
             {
                 bool isSelling = false;
-                Debug.Log(www.downloadHandler.text);
+                //Debug.Log(www.downloadHandler.text);
                 Main.Instance.userInfo.Money = www.downloadHandler.text;
                 Main.Instance.userInfo.setMoney.UpdateMoney(isSelling);
             }
@@ -265,6 +265,53 @@ public class Web : MonoBehaviour
                 string jsonArray = www.downloadHandler.text;
 
                 callback(jsonArray);
+            }
+        }
+    }
+
+    public IEnumerator GetAllCards(System.Action<string> callback)
+    {
+        WWWForm form = new WWWForm();
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/SchmingusTCG/GetAllCards.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                // Show results as text
+                Debug.Log(www.downloadHandler.text);
+                string jsonArray = www.downloadHandler.text;
+
+                callback(jsonArray);
+            }
+        }
+    }
+
+    public IEnumerator IsCardInInventory(string cardID, string userID, System.Action<string> callback)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("userID", userID);
+        form.AddField("cardID", cardID);
+
+
+        using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/SchmingusTCG/IsCardInInventory.php", form))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                // Show results as text
+                Debug.Log(cardID + " " + www.downloadHandler.text);
+                callback(www.downloadHandler.text);
             }
         }
     }
