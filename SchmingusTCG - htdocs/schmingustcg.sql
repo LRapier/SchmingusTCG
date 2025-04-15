@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2025 at 08:48 PM
+-- Generation Time: Apr 15, 2025 at 08:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -78,7 +78,33 @@ INSERT INTO `cards` (`id`, `name`, `rarity`, `price`, `imgVer`) VALUES
 (36, 'Spoigus', 'epic', 500, 1),
 (37, 'Orphgus', 'epic', 500, 1),
 (38, 'Robgus', 'rare', 50, 1),
-(39, 'Sigus', 'epic', 500, 1);
+(39, 'Sigus', 'epic', 500, 1),
+(40, 'Ariboo', 'epic', 500, 1),
+(41, 'Colboo', 'rare', 50, 1),
+(42, 'Jayboo', 'rare', 50, 1),
+(43, 'Kaiboo', 'rare', 50, 1),
+(44, 'Lloyboo', 'rare', 50, 1),
+(45, 'Nyboo', 'rare', 50, 1),
+(46, 'Pixboo', 'epic', 500, 1),
+(47, 'Sorboo', 'epic', 500, 1),
+(48, 'Wyldboo', 'epic', 500, 1),
+(49, 'Zanboo', 'rare', 50, 1),
+(50, 'Copper Geepy', 'epic', 500, 1),
+(51, 'Diamond Yepmo', 'epic', 500, 1),
+(52, 'Obsidian Skybo', 'legendary', 1000, 1),
+(53, 'Platinum Spleep', 'epic', 500, 1),
+(54, 'Rose Gold Beeboo', 'epic', 500, 1),
+(55, 'Ruby Cargee', 'epic', 500, 1),
+(56, 'Silver Schmeepy', 'epic', 500, 1),
+(57, 'Nightbo', 'mythical', 5000, 1),
+(58, 'Fancy Schmingus', 'rare', 50, 1),
+(59, 'Fancy Beeboo', 'rare', 50, 1),
+(60, 'Fancy Cargee', 'rare', 50, 1),
+(61, 'Fancy Geepy', 'rare', 50, 1),
+(62, 'Fancy Schmeepy', 'rare', 50, 1),
+(63, 'Fancy Skybo', 'epic', 500, 1),
+(64, 'Fancy Spleep', 'rare', 50, 1),
+(65, 'Fancy Yepmo', 'rare', 50, 1);
 
 -- --------------------------------------------------------
 
@@ -98,7 +124,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `money`) VALUES
-(1, 'test', 'test', 999999),
+(1, 'test', 'test', 998949),
 (2, 'poo', 'poo', 0),
 (3, 'buh', 'buh', 1),
 (4, 'p', 'p', 50);
@@ -259,7 +285,29 @@ INSERT INTO `userscards` (`id`, `userid`, `cardid`, `edition`) VALUES
 (138, 3, 4, 'foil'),
 (139, 3, 21, 'none'),
 (140, 2, 9, 'none'),
-(142, 2, 31, 'none');
+(142, 2, 31, 'none'),
+(143, 2, 1, 'foil'),
+(144, 1, 11, 'foil'),
+(145, 1, 13, 'holo'),
+(146, 1, 7, 'none'),
+(147, 1, 8, 'foil'),
+(148, 1, 14, 'none'),
+(149, 1, 14, 'none'),
+(150, 1, 15, 'none'),
+(151, 1, 12, 'none'),
+(152, 1, 8, 'none'),
+(153, 1, 64, 'none'),
+(154, 1, 15, 'none'),
+(155, 1, 7, 'foil'),
+(156, 1, 41, 'none'),
+(157, 1, 13, 'none'),
+(158, 1, 13, 'none'),
+(159, 1, 9, 'foil'),
+(160, 1, 6, 'holo'),
+(161, 1, 8, 'none'),
+(162, 1, 11, 'none'),
+(163, 1, 21, 'none'),
+(164, 1, 7, 'foil');
 
 --
 -- Indexes for dumped tables
@@ -291,7 +339,7 @@ ALTER TABLE `userscards`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -303,7 +351,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `userscards`
 --
 ALTER TABLE `userscards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

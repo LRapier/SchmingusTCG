@@ -11,8 +11,9 @@ if ($conn->connect_error)
 //user variables
 $userID = $_POST["userID"];
 $cardID = $_POST["cardID"];
+$edition = $_POST["edition"];
 
-$sql = "SELECT id FROM userscards WHERE userid = '" . $userID . "' AND cardid = '" . $cardID . "'";
+$sql = "SELECT id FROM userscards WHERE userid = '" . $userID . "' AND cardid = '" . $cardID . "' AND edition = '" . $edition . "'";
 
 $result = $conn->query($sql);
 

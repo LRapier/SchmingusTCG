@@ -356,6 +356,7 @@
 "Assets/Card.cs"
 "Assets/CardManager.cs"
 "Assets/ClearCoal.cs"
+"Assets/DexCard.cs"
 "Assets/ImageManager.cs"
 "Assets/Login.cs"
 "Assets/Main.cs"

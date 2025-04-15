@@ -292,11 +292,12 @@ public class Web : MonoBehaviour
         }
     }
 
-    public IEnumerator IsCardInInventory(string cardID, string userID, System.Action<string> callback)
+    public IEnumerator IsCardInInventory(string cardID, string userID, string edition, System.Action<string> callback)
     {
         WWWForm form = new WWWForm();
         form.AddField("userID", userID);
         form.AddField("cardID", cardID);
+        form.AddField("edition", edition);
 
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/SchmingusTCG/IsCardInInventory.php", form))
@@ -310,7 +311,7 @@ public class Web : MonoBehaviour
             else
             {
                 // Show results as text
-                Debug.Log(cardID + " " + www.downloadHandler.text);
+                Debug.Log(www.downloadHandler.text);
                 callback(www.downloadHandler.text);
             }
         }

@@ -20,7 +20,7 @@ public class CardManager : MonoBehaviour
     public Sprite holoSprite;
     public Sprite foilSprite;
 
-    void Start()
+    public void Start()
     {
         _createCardsCallback = (jsonArrayString) =>
         {
