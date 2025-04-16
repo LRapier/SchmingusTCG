@@ -17,11 +17,14 @@ $sql = "SELECT id FROM userscards WHERE userid = '" . $userID . "' AND cardid = 
 
 $result = $conn->query($sql);
 
-if ($result->num_rows > 0) {
+if ($result->num_rows > 1) {
+    echo "2";
+} else if ($result->num_rows == 1) {
     echo "1";
 } else {
     echo "0";
 }
+
 $conn->close();
 
 ?>

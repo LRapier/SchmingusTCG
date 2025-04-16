@@ -51,7 +51,7 @@ public class Web : MonoBehaviour
                     Main.Instance.userInfo.SetCredentials(username, password);
                     Main.Instance.userInfo.SetInfo(www.downloadHandler.text);
                     Main.Instance.userProfile.SetActive(true);
-                    Main.Instance.login.gameObject.SetActive(false);
+                    Main.Instance.login.SetActive(false);
                 }
             }
         }
@@ -244,11 +244,13 @@ public class Web : MonoBehaviour
         }
     }
 
-    public IEnumerator PullCard(string userid, System.Action<string> callback)
+    public IEnumerator PullCard(string userid, string cardPack, int cost, int first, System.Action<string> callback)
     {
         WWWForm form = new WWWForm();
         form.AddField("userid", userid);
-        form.AddField("cost", 50);
+        form.AddField("cost", cost);
+        form.AddField("cardpack", cardPack);
+        form.AddField("first", first);
 
         using (UnityWebRequest www = UnityWebRequest.Post("http://localhost/SchmingusTCG/CardPull.php", form))
         {

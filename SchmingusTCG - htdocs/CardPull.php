@@ -5,6 +5,8 @@ require 'ConnectionSettings.php';
 //user variables
 $userid = $_POST["userid"];
 $cost = $_POST["cost"];
+$cardpack = $_POST["cardpack"];
+$first = $_POST["first"];
 
 // Check connection
 if ($conn->connect_error) 
@@ -34,10 +36,13 @@ else if($rng <= 3000)
 else
     $edition = "none";
 
-$sql5 = "UPDATE `users` SET `money`= money - '" . $cost . "' WHERE `id` = '" . $userid . "'";
-$conn->query($sql5);
+if($first == 1)
+{
+    $sql5 = "UPDATE `users` SET `money`= money - '" . $cost . "' WHERE `id` = '" . $userid . "'";
+    $conn->query($sql5);
+}
 
-$sql = "SELECT id FROM cards WHERE rarity = '" . $rarity . "'";
+$sql = "SELECT id FROM cards WHERE rarity = '" . $rarity . "' AND cardpack = '" . $cardpack . "'";
 
 $result = $conn->query($sql);
 

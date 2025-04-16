@@ -95,10 +95,21 @@ public class SchmingleDex : MonoBehaviour
         cardGO.transform.localScale = Vector3.one;
         cardGO.transform.localPosition = Vector3.zero;
 
-        if (isDiscovered == 1)
+        if (isDiscovered >= 1)
         {
             cardGO.transform.Find("Name").GetComponent<TextMeshProUGUI>().text = cardInfoJson["name"];
-            cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = cardInfoJson["price"] + " Smackers";
+            switch (edition)
+            {
+                case "holo":
+                    cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = (int.Parse(cardInfoJson["price"]) * 2) + " Smackers";
+                    break;
+                case "foil":
+                    cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = ((int)(int.Parse(cardInfoJson["price"]) * 1.25)) + " Smackers";
+                    break;
+                case "none":
+                    cardGO.transform.Find("Price").GetComponent<TextMeshProUGUI>().text = cardInfoJson["price"] + " Smackers";
+                    break;
+            }
             cardGO.transform.Find("Description").GetComponent<TextMeshProUGUI>().text = cardInfoJson["description"];
             string rarity = cardInfoJson["rarity"];
             cardGO.transform.Find("Rarity").GetComponent<TextMeshProUGUI>().text = char.ToUpper(rarity[0]) + rarity.Substring(1);
