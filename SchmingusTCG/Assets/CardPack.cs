@@ -9,6 +9,10 @@ public class CardPack : MonoBehaviour
 
     public void BuyPack()
     {
-        CardManager.Instance.AddCard(cardPackName, cost, 1);
+        if(cost <= int.Parse(Main.Instance.userInfo.Money))
+        {
+            CardManager.Instance.AddCard(cardPackName, cost, 1);
+            StartCoroutine(Main.Instance.web.GetMoney());
+        }
     }
 }

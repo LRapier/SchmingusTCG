@@ -42,7 +42,10 @@ if($first == 1)
     $conn->query($sql5);
 }
 
-$sql = "SELECT id FROM cards WHERE rarity = '" . $rarity . "' AND cardpack = '" . $cardpack . "'";
+if($cardpack != '*')
+    $sql = "SELECT id FROM cards WHERE rarity = '" . $rarity . "' AND cardpack = '" . $cardpack . "'";
+else
+    $sql = "SELECT id FROM cards WHERE rarity = '" . $rarity . "'";
 
 $result = $conn->query($sql);
 

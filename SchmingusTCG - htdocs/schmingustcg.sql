@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2025 at 07:02 AM
+-- Generation Time: Apr 17, 2025 at 07:44 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -161,9 +161,11 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `username`, `password`, `money`) VALUES
 (1, 'test', 'test', 998949),
-(2, 'poo', 'poo', 650),
+(2, 'poo', 'poo', 10),
 (3, 'buh', 'buh', 1),
-(4, 'p', 'p', 50);
+(4, 'p', 'p', 50),
+(5, 'pee', 'pee', 22),
+(6, 'test2', 'test2', 10);
 
 -- --------------------------------------------------------
 
@@ -492,12 +494,50 @@ INSERT INTO `userscards` (`id`, `userid`, `cardid`, `edition`) VALUES
 (350, 2, 33, 'none'),
 (351, 2, 92, 'foil'),
 (352, 2, 10, 'none'),
-(353, 2, 92, 'none'),
 (354, 2, 1, 'none'),
 (355, 2, 18, 'none'),
 (356, 2, 36, 'none'),
 (357, 2, 1, 'none'),
-(358, 2, 74, 'holo');
+(358, 2, 74, 'holo'),
+(359, 2, 59, 'none'),
+(360, 2, 2, 'holo'),
+(361, 2, 2, 'holo'),
+(362, 2, 31, 'none'),
+(363, 2, 1, 'foil'),
+(365, 2, 2, 'none'),
+(367, 2, 2, 'foil'),
+(368, 2, 3, 'none'),
+(369, 2, 63, 'none'),
+(370, 2, 5, 'none'),
+(371, 2, 7, 'foil'),
+(372, 2, 20, 'none'),
+(373, 2, 80, 'holo'),
+(374, 2, 73, 'none'),
+(375, 2, 8, 'none'),
+(376, 2, 57, 'foil'),
+(377, 2, 5, 'none'),
+(378, 2, 1, 'none'),
+(379, 2, 1, 'none'),
+(380, 2, 75, 'none'),
+(381, 2, 2, 'foil'),
+(382, 2, 2, 'none'),
+(383, 2, 29, 'none'),
+(384, 2, 8, 'none'),
+(385, 2, 73, 'none'),
+(387, 2, 7, 'none'),
+(388, 2, 20, 'none'),
+(392, 2, 3, 'none'),
+(393, 2, 57, 'none'),
+(394, 2, 1, 'none'),
+(395, 2, 43, 'none'),
+(404, 6, 66, 'none'),
+(405, 6, 81, 'none'),
+(406, 6, 8, 'holo'),
+(407, 6, 3, 'foil'),
+(408, 6, 76, 'none'),
+(409, 6, 60, 'none'),
+(410, 6, 6, 'none'),
+(411, 6, 4, 'none');
 
 --
 -- Indexes for dumped tables
@@ -535,13 +575,13 @@ ALTER TABLE `cards`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `userscards`
 --
 ALTER TABLE `userscards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=359;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=413;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

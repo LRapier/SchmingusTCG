@@ -238,7 +238,7 @@ public class Web : MonoBehaviour
             {
                 bool isSelling = false;
                 //Debug.Log(www.downloadHandler.text);
-                Main.Instance.userInfo.Money = www.downloadHandler.text;
+                Main.Instance.userInfo.Money = (int.Parse(www.downloadHandler.text) + 1).ToString();
                 Main.Instance.userInfo.setMoney.UpdateMoney(isSelling);
             }
         }

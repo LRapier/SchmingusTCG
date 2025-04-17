@@ -79,15 +79,14 @@ public class CardManager : MonoBehaviour
     {
         currentCardPack = cardPack;
         currentCardPrice = price;
-        Debug.Log(first == 1);
+        /*Debug.Log(first == 1);
         Debug.Log(int.Parse(Main.Instance.userInfo.Money) >= price);
         Debug.Log(first == 1 || int.Parse(Main.Instance.userInfo.Money) >= price);
-        Debug.Log((first == 1) || (int.Parse(Main.Instance.userInfo.Money) >= price));
         if (first == 1 || int.Parse(Main.Instance.userInfo.Money) >= price)
-        {
+        {*/
             string userId = Main.Instance.userInfo.UserID;
             StartCoroutine(Main.Instance.web.PullCard(userId, cardPack, price, first, _pullCardCallback));
-        }
+        //}
     }
 
     IEnumerator CreateCardsRoutine(string jsonArrayString)
@@ -272,8 +271,6 @@ public class CardManager : MonoBehaviour
         }
 
         okButton.SetActive(true);
-
-        StartCoroutine(Main.Instance.web.GetMoney());
 
         //Add to Inventory
         jsonArray = JSON.Parse(jsonArrayString) as JSONArray;
