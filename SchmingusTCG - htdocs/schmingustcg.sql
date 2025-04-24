@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 22, 2025 at 08:48 PM
+-- Generation Time: Apr 24, 2025 at 10:37 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -166,18 +166,18 @@ INSERT INTO `cards` (`id`, `name`, `rarity`, `price`, `imgVer`, `cardpack`) VALU
 (123, 'Stitched Spleep', 'uncommon', 10, 3, 'Spleep'),
 (124, 'Stitched Yepmo', 'uncommon', 10, 3, 'Yepmo'),
 (125, 'Bubble Beeboo', 'mythical', 5000, 3, 'Beeboo'),
-(126, 'Plaid Schmeepy', 'mythical', 5000, 3, 'Schmeepy'),
+(126, 'Plaid Schmeepy', 'legendary', 1000, 3, 'Schmeepy'),
 (127, 'Sunset Yepmo', 'mythical', 5000, 3, 'Yepmo'),
 (128, 'Fishtank Cargee', 'mythical', 5000, 3, 'Cargee'),
 (129, 'Strawberry Geepy', 'mythical', 5000, 3, 'Geepy'),
 (130, 'Lava Spleep', 'mythical', 5000, 3, 'Spleep'),
-(131, 'Angel Schmingus', 'mythical', 5000, 3, 'Schmingus'),
-(132, 'Angel Beeboo', 'mythical', 5000, 3, 'Beeboo'),
-(133, 'Angel Cargee', 'mythical', 5000, 3, 'Cargee'),
-(134, 'Angel Geepy', 'mythical', 5000, 3, 'Geepy'),
-(135, 'Angel Schmeepy', 'mythical', 5000, 3, 'Schmeepy'),
-(136, 'Angel Skybo', 'mythical', 5000, 3, 'Skybo'),
-(137, 'Angel Spleep', 'mythical', 5000, 3, 'Spleep'),
+(131, 'Angel Schmingus', 'legendary', 1000, 3, 'Schmingus'),
+(132, 'Angel Beeboo', 'legendary', 1000, 3, 'Beeboo'),
+(133, 'Angel Cargee', 'legendary', 1000, 3, 'Cargee'),
+(134, 'Angel Geepy', 'legendary', 1000, 3, 'Geepy'),
+(135, 'Angel Schmeepy', 'legendary', 1000, 3, 'Schmeepy'),
+(136, 'Angel Skybo', 'legendary', 1000, 3, 'Skybo'),
+(137, 'Angel Spleep', 'legendary', 1000, 3, 'Spleep'),
 (138, 'Angel Yepmo', 'mythical', 5000, 3, 'Yepmo'),
 (139, 'Marble Schmingus', 'uncommon', 10, 3, 'Schmingus'),
 (140, 'Marble Beeboo', 'uncommon', 10, 3, 'Beeboo'),
@@ -186,7 +186,70 @@ INSERT INTO `cards` (`id`, `name`, `rarity`, `price`, `imgVer`, `cardpack`) VALU
 (143, 'Marble Schmeepy', 'uncommon', 10, 3, 'Schmeepy'),
 (144, 'Marble Skybo', 'uncommon', 10, 3, 'Skybo'),
 (145, 'Marble Spleep', 'uncommon', 10, 3, 'Spleep'),
-(146, 'Marble Yepmo', 'uncommon', 10, 3, 'Yepmo');
+(146, 'Marble Yepmo', 'uncommon', 10, 3, 'Yepmo'),
+(147, 'Freepy', 'rare', 50, 3, 'Geepy'),
+(148, 'Golden Freepy', 'epic', 500, 3, 'Geepy'),
+(149, 'Toy Freepy', 'rare', 50, 3, 'Geepy'),
+(150, 'Withered Freepy', 'rare', 50, 3, 'Geepy'),
+(151, 'Withered Golden Freepy', 'epic', 500, 3, 'Geepy'),
+(152, 'Phantom Freepy', 'rare', 50, 3, 'Geepy'),
+(153, 'Nightmare Freepy', 'rare', 50, 3, 'Geepy'),
+(154, 'Nightmare Freepybear', 'rare', 50, 3, 'Geepy'),
+(155, 'Nightmeepy', 'epic', 500, 3, 'Geepy'),
+(156, 'Funtime Freepy', 'rare', 50, 3, 'Geepy'),
+(157, 'Sargmeepy', 'rare', 50, 3, 'Schmeepy'),
+(158, 'Simmeepy', 'rare', 50, 3, 'Schmeepy'),
+(159, 'Grifmeepy', 'rare', 50, 3, 'Schmeepy'),
+(160, 'Donumeepy', 'rare', 50, 3, 'Schmeepy'),
+(161, 'Lopemeepy', 'epic', 500, 3, 'Schmeepy'),
+(162, 'Cabmeepy', 'rare', 50, 3, 'Schmeepy'),
+(163, 'Churmeepy', 'rare', 50, 3, 'Schmeepy'),
+(164, 'Tuckmeepy', 'rare', 50, 3, 'Schmeepy'),
+(165, 'Docmeepy', 'epic', 500, 3, 'Schmeepy'),
+(166, 'Texmeepy', 'rare', 50, 3, 'Schmeepy'),
+(167, 'Kaikameepy', 'epic', 500, 3, 'Schmeepy'),
+(168, 'Friskmo', 'epic', 500, 3, 'Yepmo'),
+(169, 'Flowmo', 'epic', 500, 3, 'Yepmo'),
+(170, 'Torimo', 'rare', 50, 3, 'Yepmo'),
+(171, 'Sansmo', 'rare', 50, 3, 'Yepmo'),
+(172, 'Papymo', 'rare', 50, 3, 'Yepmo'),
+(173, 'Undymo', 'rare', 50, 3, 'Yepmo'),
+(174, 'Alphymo', 'rare', 50, 3, 'Yepmo'),
+(175, 'Mettamo', 'rare', 50, 3, 'Yepmo'),
+(176, 'Asgormo', 'rare', 50, 3, 'Yepmo'),
+(177, 'Charmo', 'epic', 500, 3, 'Yepmo'),
+(178, 'Blooming Schmingus', 'uncommon', 10, 3, 'Schmingus'),
+(179, 'Blooming Beeboo', 'uncommon', 10, 3, 'Beeboo'),
+(180, 'Blooming Cargee', 'uncommon', 10, 3, 'Cargee'),
+(181, 'Blooming Geepy', 'uncommon', 10, 3, 'Geepy'),
+(182, 'Blooming Schmeepy', 'uncommon', 10, 3, 'Schmeepy'),
+(183, 'Blooming Skybo', 'uncommon', 10, 3, 'Skybo'),
+(184, 'Blooming Spleep', 'uncommon', 10, 3, 'Spleep'),
+(185, 'Blooming Yepmo', 'uncommon', 10, 3, 'Yepmo'),
+(186, 'Lights Out Schmingus', 'rare', 50, 3, 'Schmingus'),
+(187, 'Lights Out Beeboo', 'rare', 50, 3, 'Beeboo'),
+(188, 'Lights Out Cargee', 'rare', 50, 3, 'Cargee'),
+(189, 'Lights Out Geepy', 'rare', 50, 3, 'Geepy'),
+(190, 'Lights Out Schmeepy', 'rare', 50, 3, 'Schmeepy'),
+(191, 'Lights Out Skybo', 'rare', 50, 3, 'Skybo'),
+(192, 'Lights Out Spleep', 'rare', 50, 3, 'Spleep'),
+(193, 'Lights Out Yepmo', 'rare', 50, 3, 'Yepmo'),
+(194, 'Sonbo', 'rare', 50, 3, 'Skybo'),
+(195, 'Tailbo', 'rare', 50, 3, 'Skybo'),
+(196, 'Knuckbo', 'rare', 50, 3, 'Skybo'),
+(197, 'Amybo', 'rare', 50, 3, 'Skybo'),
+(198, 'Shadbo', 'epic', 500, 3, 'Skybo'),
+(199, 'Rougbo', 'rare', 50, 3, 'Skybo'),
+(200, 'Blazbo', 'epic', 500, 3, 'Skybo'),
+(201, 'Silvbo', 'epic', 500, 3, 'Skybo'),
+(202, 'Blushing Schmingus', 'uncommon', 10, 3, 'Schmingus'),
+(203, 'Blushing Beeboo', 'uncommon', 10, 3, 'Beeboo'),
+(204, 'Blushing Cargee', 'uncommon', 10, 3, 'Cargee'),
+(205, 'Blushing Geepy', 'uncommon', 10, 3, 'Geepy'),
+(206, 'Blushing Schmeepy', 'uncommon', 10, 3, 'Schmeepy'),
+(207, 'Blushing Skybo', 'uncommon', 10, 3, 'Skybo'),
+(208, 'Blushing Spleep', 'uncommon', 10, 3, 'Spleep'),
+(209, 'Blushing Yepmo', 'uncommon', 10, 3, 'Yepmo');
 
 -- --------------------------------------------------------
 
@@ -907,7 +970,7 @@ ALTER TABLE `userscards`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
 
 --
 -- AUTO_INCREMENT for table `users`
