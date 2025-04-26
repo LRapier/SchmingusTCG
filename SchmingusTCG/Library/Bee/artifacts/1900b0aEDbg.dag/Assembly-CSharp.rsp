@@ -368,6 +368,7 @@
 "Assets/SimpleJSON.cs"
 "Assets/UIManager.cs"
 "Assets/UserInfo.cs"
+"Assets/Warning.cs"
 "Assets/Web.cs"
 -langversion:9.0
 /deterministic

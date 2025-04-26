@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2025 at 10:37 AM
+-- Generation Time: Apr 24, 2025 at 08:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -178,7 +178,7 @@ INSERT INTO `cards` (`id`, `name`, `rarity`, `price`, `imgVer`, `cardpack`) VALU
 (135, 'Angel Schmeepy', 'legendary', 1000, 3, 'Schmeepy'),
 (136, 'Angel Skybo', 'legendary', 1000, 3, 'Skybo'),
 (137, 'Angel Spleep', 'legendary', 1000, 3, 'Spleep'),
-(138, 'Angel Yepmo', 'mythical', 5000, 3, 'Yepmo'),
+(138, 'Angel Yepmo', 'legendary', 1000, 3, 'Yepmo'),
 (139, 'Marble Schmingus', 'uncommon', 10, 3, 'Schmingus'),
 (140, 'Marble Beeboo', 'uncommon', 10, 3, 'Beeboo'),
 (141, 'Marble Cargee', 'uncommon', 10, 3, 'Cargee'),
@@ -249,7 +249,8 @@ INSERT INTO `cards` (`id`, `name`, `rarity`, `price`, `imgVer`, `cardpack`) VALU
 (206, 'Blushing Schmeepy', 'uncommon', 10, 3, 'Schmeepy'),
 (207, 'Blushing Skybo', 'uncommon', 10, 3, 'Skybo'),
 (208, 'Blushing Spleep', 'uncommon', 10, 3, 'Spleep'),
-(209, 'Blushing Yepmo', 'uncommon', 10, 3, 'Yepmo');
+(209, 'Blushing Yepmo', 'uncommon', 10, 3, 'Yepmo'),
+(210, 'Plaid Schmeepy', 'mythical', 5000, 3, 'Schmeepy');
 
 -- --------------------------------------------------------
 
@@ -275,7 +276,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `money`) VALUES
 (4, 'p', 'p', 50),
 (5, 'pee', 'pee', 22),
 (6, 'test2', 'test2', 10),
-(7, 'h', 'h', 0);
+(7, 'h', 'h', 0),
+(8, 'testing', 'testing', 24),
+(9, 'caboose', 'iloveschmoo', 7);
 
 -- --------------------------------------------------------
 
@@ -938,7 +941,83 @@ INSERT INTO `userscards` (`id`, `userid`, `cardid`, `edition`) VALUES
 (706, 7, 2, 'none'),
 (707, 7, 2, 'holo'),
 (708, 7, 44, 'none'),
-(709, 7, 67, 'foil');
+(709, 7, 67, 'foil'),
+(710, 8, 65, 'none'),
+(711, 8, 25, 'holo'),
+(712, 8, 111, 'none'),
+(713, 8, 29, 'none'),
+(714, 8, 2, 'none'),
+(715, 8, 88, 'foil'),
+(716, 9, 7, 'none'),
+(717, 9, 34, 'none'),
+(718, 9, 6, 'none'),
+(719, 9, 144, 'none'),
+(720, 9, 27, 'none'),
+(721, 9, 71, 'none'),
+(722, 9, 91, 'foil'),
+(723, 9, 3, 'holo'),
+(724, 9, 123, 'none'),
+(725, 9, 193, 'none'),
+(726, 9, 120, 'none'),
+(727, 9, 8, 'none'),
+(728, 9, 12, 'none'),
+(730, 9, 186, 'holo'),
+(733, 9, 125, 'none'),
+(735, 9, 115, 'none'),
+(736, 9, 108, 'none'),
+(737, 9, 104, 'holo'),
+(738, 9, 4, 'holo'),
+(739, 9, 147, 'none'),
+(742, 9, 4, 'none'),
+(743, 9, 3, 'none'),
+(744, 9, 90, 'holo'),
+(745, 9, 3, 'holo'),
+(746, 9, 141, 'holo'),
+(747, 9, 140, 'none'),
+(748, 9, 125, 'foil'),
+(749, 9, 6, 'holo'),
+(751, 9, 23, 'none'),
+(752, 9, 178, 'none'),
+(753, 9, 147, 'none'),
+(754, 9, 7, 'holo'),
+(755, 9, 31, 'foil'),
+(756, 9, 8, 'foil'),
+(757, 9, 114, 'none'),
+(758, 9, 5, 'none'),
+(759, 9, 24, 'none'),
+(762, 9, 74, 'none'),
+(763, 9, 1, 'none'),
+(764, 9, 202, 'none'),
+(765, 9, 131, 'none'),
+(766, 9, 66, 'none'),
+(767, 9, 7, 'foil'),
+(769, 9, 70, 'holo'),
+(770, 9, 179, 'foil'),
+(771, 9, 2, 'none'),
+(772, 9, 67, 'holo'),
+(775, 9, 18, 'holo'),
+(779, 9, 36, 'none'),
+(783, 9, 1, 'foil'),
+(785, 9, 109, 'none'),
+(786, 9, 191, 'none'),
+(787, 9, 198, 'foil'),
+(788, 9, 105, 'none'),
+(789, 9, 116, 'none'),
+(794, 9, 205, 'foil'),
+(796, 9, 88, 'none'),
+(800, 9, 64, 'holo'),
+(801, 9, 115, 'foil'),
+(806, 9, 203, 'none'),
+(809, 9, 184, 'none'),
+(812, 9, 70, 'none'),
+(813, 9, 207, 'none'),
+(814, 9, 25, 'none'),
+(825, 9, 209, 'foil'),
+(828, 9, 64, 'none'),
+(831, 9, 209, 'none'),
+(832, 9, 21, 'holo'),
+(834, 9, 28, 'foil'),
+(835, 9, 5, 'foil');
 
 --
 -- Indexes for dumped tables
@@ -970,19 +1049,19 @@ ALTER TABLE `userscards`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=210;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=211;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `userscards`
 --
 ALTER TABLE `userscards`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=710;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=836;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

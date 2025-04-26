@@ -5,6 +5,8 @@ using UnityEngine.Networking;
 
 public class Web : MonoBehaviour
 {
+    public Warning warning;
+    
     void Start()
     {
         StartCoroutine(GetDate());
@@ -44,8 +46,14 @@ public class Web : MonoBehaviour
             {
                 Debug.Log(www.downloadHandler.text);
 
-                if (www.downloadHandler.text.Contains("Wrong Credentials") || www.downloadHandler.text.Contains("Username does not exist"))
-                    Debug.Log("Try Again");
+                if (www.downloadHandler.text.Contains("Wrong Credentials"))
+                {
+                    warning.PasswordWrong();
+                }
+                else if(www.downloadHandler.text.Contains("Username does not exist"))
+                {
+                    warning.UserNotFound();
+                }
                 else
                 {
                     Main.Instance.userInfo.SetCredentials(username, password);
@@ -74,6 +82,14 @@ public class Web : MonoBehaviour
             else
             {
                 Debug.Log(www.downloadHandler.text);
+                if (www.downloadHandler.text.Contains("Username taken"))
+                {
+                    warning.UsernameTaken();
+                }
+                else if (www.downloadHandler.text.Contains("New record created"))
+                {
+                    warning.Registered();
+                }
             }
         }
     }
