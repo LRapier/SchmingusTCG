@@ -109,6 +109,7 @@
 -define:ENABLE_UNITY_COLLECTIONS_CHECKS
 -define:ENABLE_BURST_AOT
 -define:UNITY_TEAM_LICENSE
+-define:UNITY_PRO_LICENSE
 -define:ENABLE_CUSTOM_RENDER_TEXTURE
 -define:ENABLE_DIRECTOR
 -define:ENABLE_LOCALIZATION
@@ -359,6 +360,7 @@
 "Assets/DexCard.cs"
 "Assets/ImageManager.cs"
 "Assets/Login.cs"
+"Assets/Logout.cs"
 "Assets/Main.cs"
 "Assets/Mine.cs"
 "Assets/SchmingleDex.cs"
@@ -368,6 +370,7 @@
 "Assets/SimpleJSON.cs"
 "Assets/UIManager.cs"
 "Assets/UserInfo.cs"
+"Assets/Warning.cs"
 "Assets/Web.cs"
 -langversion:9.0
 /deterministic

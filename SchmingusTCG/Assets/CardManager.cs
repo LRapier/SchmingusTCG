@@ -6,7 +6,6 @@ using System;
 using SimpleJSON;
 using TMPro;
 using UnityEngine.XR;
-using static UnityEditor.Progress;
 
 public class CardManager : MonoBehaviour
 {
